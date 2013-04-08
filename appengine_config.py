@@ -1,5 +1,5 @@
 
-
+remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID', ['bseu-fm'])
 
 def webapp_add_wsgi_middleware(app):
     from google.appengine.ext.appstats import recording
