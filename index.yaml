@@ -1,0 +1,6 @@
+indexes:
+- kind: Article
+  properties:
+  - name: publish_state
+  - name: publish_date
+    direction: desc
