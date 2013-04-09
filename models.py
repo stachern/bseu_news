@@ -9,7 +9,7 @@ SIMPLE_TYPES = (int, long, float, bool, dict, basestring)
 
 
 def to_dict(model):
-    output = {}
+    output = {'id': str(model.key().id())}
 
     for key, prop in model.properties().iteritems():
 
