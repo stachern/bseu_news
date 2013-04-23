@@ -1,0 +1,268 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html, body {
+    height: 100%;
+    text-align: justify;
+    color: #1B264A;
+    font-size: 16px;
+
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
+
+.proper-content {
+    padding-top: 66px;
+    /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+/* Set the fixed height of the footer here */
+
+#push, #footer {
+    height: 66px;
+}
+
+#footer {
+    background-color: #f5f5f5;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container .credit {
+    margin: 20px 0;
+}
+
+#rssdata ul.rss-items {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#rssdata ul.rss-items li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#rssdata ul.rss-items a {
+    margin: 0px;
+    display: block;
+    font: 15px/16px  Verdana, Tahoma, Arial, sans-serif;
+    padding: 5px;
+    background: #1A52C9;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+#rssdata ul.rss-items a:hover {
+    background: #DE2346;
+    color: #fff;
+    text-decoration: none;
+}
+
+#rsstitle {
+    padding: 6px 6px;
+    color: #fff;
+    font: 17px/18px bold Verdana, Tahoma, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom: 2px solid #eee;
+} 
+
+#rssbottom {
+    padding: 2px 6px;
+    background: #1A52C9;
+    color: #fff;
+    text-decoration: none;
+    border-top: 2px solid #eee;
+} 
+
+
+
+#twitter ul.twits {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#twitter ul.twits li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#twitter ul.twits a.tw {
+    margin: 0px;
+    display: block;
+    font: 15px/16px  Verdana, Tahoma, Arial, sans-serif;
+    padding: 5px;
+    background: #1A52C9;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+#twitter ul.twits a.tw:hover {
+    background: #DE2346;
+    color: #fff;
+    text-decoration: none;
+}
+
+#twitter_title {
+    padding: 6px 6px;
+    color: #fff;
+    font: 17px/18px bold Verdana, Tahoma, Arial, sans-serif;
+    text-decoration: none;
+    border-bottom: 2px solid #eee;
+} 
+
+#twitter_bottom {
+    padding: 2px 6px;
+    background: #1A52C9;
+    color: #fff;
+    text-decoration: none;   
+} 
+
+.white {
+    color: #FFFFFF;  
+}
+
+a.white {
+    color: #FFFFFF;  
+}
+
+a:hover.white {
+    color: #FFFFFF;  
+}
+
+.article .thumbnail {
+    margin: 15px;
+}
+
+a:focus {
+    outline: thin dotted #DE2346;
+    outline-offset: -2px;
+}
+
+.well li a {
+    color: #FFFFFF;
+}
+
+a.thumbnail {
+    background-color: #FFFFFF;
+}
+
+.well {
+    background-color: #1A52C9;
+}
+
+#sidebar .well, #sidebar h2, #sidebar a  {
+    color: #FFFFFF;
+}
+
+#sidebar a:hover {
+    color: #DE2346;
+}
+
+.navbar-inverse .brand:hover, .navbar-inverse .nav>.active>a, .navbar-inverse .nav>.active>a:hover, .navbar-inverse .nav>.active>a:focus {
+    background-color: #DE2346;
+}
+
+.navbar-inner {  
+    background-color: #1A52C9;    
+}
+
+.navbar-inverse .navbar-inner {
+    background-color: #2760D9;
+}
+
+.navbar-inverse .nav li.dropdown.open>.dropdown-toggle, .navbar-inverse .nav li.dropdown.active>.dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle {    
+    background-color: #DE2346
+}
+
+.navbar-inverse .brand:hover, .navbar-inverse .nav>.active>a, .navbar-inverse .nav>.active>a:hover, .navbar-inverse .nav>.active>a:focus {   
+    background-color: #DE2346;   
+}
+
+a.thumbnail:hover {
+    background-color: #DE2346;   
+}
+
+a:focus {
+    outline: thin dotted #DE2346;    
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+    background: #de2346 none;
+   
+}
+.dropdown-menu>li>a{
+    color: #13192E; 
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+     background-image: -moz-linear-gradient(top, #DE2346, #DE2346);   
+}
+
+.navbar-inverse .nav>li>a:focus, .navbar-inverse .nav>li>a:hover {  
+    background-color: #DE2346;
+
+}
+
+.navbar .brand {
+    max-height: 50px;
+    overflow: visible;  
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 3px;
+    margin-left: 3px;
+    padding-left: 3px; 
+    padding-right: 3px; 
+}
+
+#photo-feed.thumbnails>li.span3 {
+    height: 350px;
+    margin: 5px 5px 5px 5px;
+}
+
+.twitter-follow-button{
+    margin-top: 3px;
+}
+
+.btn-danger{
+    background-color: #DE2346;
+}
+
+.badge-important{
+    background-color: #DE2346;
+}
+
+h1, h2, h3{
+color: #13192E;
+}
+
+.nav{
+     font-size: 14px;
+}
+
+.leftimg {
+    height: 300px;
+    float:left; /* Выравнивание по левому краю */
+    margin: 10px 10px 10px 0; /* Отступы вокруг картинки */
+}

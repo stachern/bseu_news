@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+    <form id="bseu_fm_article" action="{{ url }}" method="POST" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %} class="hero-unit">
+        {% autoescape off %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            {% if field.label == "Текст новости" %}
+                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Шрифт"><i class="icon-font"></i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  </ul>
+                </div>
+                <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Размер шрифта"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a data-edit="fontSize 5"><font size="5">Огормный</font></a></li>
+                  <li><a data-edit="fontSize 3"><font size="3">Нормальный</font></a></li>
+                  <li><a data-edit="fontSize 1"><font size="1">Мелкий</font></a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                <a class="btn" data-edit="bold" title="Жирный (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+                <a class="btn" data-edit="italic" title="Наклонный (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+                <a class="btn" data-edit="strikethrough" title="Перечеркнутый"><i class="icon-strikethrough"></i></a>
+                <a class="btn" data-edit="underline" title="Подчеркнутый (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                <a class="btn" data-edit="insertunorderedlist" title="Маркированный список"><i class="icon-list-ul"></i></a>
+                <a class="btn" data-edit="insertorderedlist" title="Нумерованный список"><i class="icon-list-ol"></i></a>
+                <a class="btn" data-edit="outdent" title="Уменьшить отступ (Shift+Tab)"><i class="icon-indent-left"></i></a>
+                <a class="btn" data-edit="indent" title="Добавить отступ (Tab)"><i class="icon-indent-right"></i></a>
+                </div>
+                <div class="btn-group">
+                <a class="btn" data-edit="justifyleft" title="По левому краю (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+                <a class="btn" data-edit="justifycenter" title="По центру (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+                <a class="btn" data-edit="justifyright" title="По правому краю (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+                <a class="btn" data-edit="justifyfull" title="По шириине (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                  <a class="btn dropdown-toggle" data-toggle="dropdown" title="Ссылка"><i class="icon-link"></i></a>
+                    <div class="dropdown-menu input-append">
+                        <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+                        <button class="btn" type="button">Добавить</button>
+                </div>
+                <a class="btn" data-edit="unlink" title="Удалить ссылку"><i class="icon-cut"></i></a>
+
+                </div>
+
+                <div class="btn-group">
+                <a class="btn" title="Добавить картинку" id="pictureBtn"><i class="icon-picture"></i></a>
+                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                </div>
+                <div class="btn-group">
+                <a class="btn" data-edit="undo" title="Отменить (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+                <a class="btn" data-edit="redo" title="Возврат (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+                </div>
+                </div>
+
+                <div id="editor">
+                   {{ form.initial.body }}
+                </div>
+                <input type="hidden" name="body" id="id_body" value="{{ form.initial.body|escape }}">
+            {% else %}
+                {{ field }}
+            {% endif %}
+            </div>
+        {% endfor %}
+        {% endautoescape %}
+
+
+        <hr>
+        <button type="submit" class="btn btn-primary" onclick="save_from_handler();">Сохранить</button>
+        {% if id %}
+            <input type="hidden" name="id" value="{{ id }}"/>
+        {% endif %}
+    </form>
+
+{% endblock %}

@@ -47,7 +47,7 @@ class Article(db.Model):
     body = db.TextProperty(verbose_name='Текст новости', required=True)
     img = db.BlobProperty(verbose_name='Картинка к новости')
     publish_state = db.BooleanProperty(verbose_name='Показывать на сайте', default=True)
-    is_monthphrase = db.BooleanProperty(verbose_name='Показывать дату', default=False)
+    is_monthphrase = db.BooleanProperty(verbose_name='Не показывать дату', default=False)
 
 
 class ArticleForm(djangoforms.ModelForm):

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{%block title%}Добавление новости на сайт ФМ БГЭУ{%endblock%}</title>
+
+    <!-- Meta Tags -->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="title" content="Add new article"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- styles -->
+
+
+    <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/editor.css">
+    <link rel="stylesheet" href="/static/css/datepicker.css">
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-wysiwyg.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/static/js/custom.js"></script>
+
+
+</head>
+
+<body>{% block body %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="http://bseu.by/fm/"><img src="/static/img/logo.png" class="main-logo"/></a>
+                <div class="nav-collapse collapse">
+                    {% block navigation %}
+                        {% if user %}
+                            <p class="navbar-text pull-right">
+                                <a class="navbar-link" href="mailto:{{user.email}}">{{user.nickname}}</a> | <a class="navbar-link" href="{{ logout_url }}">Выйти</a>
+                            </p>
+                        {% endif %}
+                        <ul class="nav">
+                            <li>
+                                <a href="/article/" >Добавить новую статью</a>
+                            </li>
+                        </ul>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+   <br/>
+    <div id="wrap">
+        <div class="container">
+            <div class="proper-content">
+                {% block user_messages %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tag %}alert-{{ message.tag }}{% endif %}" >{{ message.text }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
+                {% block content %}{% endblock %}
+            </div> <!--proper content -->
+
+        </div> <!-- /container -->
+
+        <div id="push"></div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">
+                {% block site_info %}
+                    <small class="pull-right"> © Факультет менеджмента </small>
+                {% endblock %}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
